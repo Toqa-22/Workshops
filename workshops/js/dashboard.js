@@ -155,10 +155,12 @@ function renderCoursesPage() {
                         </div>
                     </td>
                     <td>
-                        <div style="display:flex; flex-direction:column; gap:6px; align-items:flex-start;">
-                            <a class="btn-tbl-view" href="${attendanceLink}" target="_blank" rel="noopener">Open Link</a>
-                            <button type="button" class="btn-tbl-edit" data-copy-reg-link="${attendanceLink}">Copy Link</button>
-                        </div>
+                        ${isAttendanceRequired
+                            ? `<div style="display:flex; flex-direction:column; gap:6px; align-items:flex-start;">
+                                <a class="btn-tbl-view" href="${attendanceLink}" target="_blank" rel="noopener">Open Link</a>
+                                <button type="button" class="btn-tbl-edit" data-copy-reg-link="${attendanceLink}">Copy Link</button>
+                               </div>`
+                            : '<span style="color:#94a3b8; font-size:12px;">N/A — attendance not required</span>'}
                     </td>
                     <td>
                         ${isAttendanceRequired
